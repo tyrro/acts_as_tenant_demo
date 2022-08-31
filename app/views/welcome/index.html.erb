@@ -1,8 +1,12 @@
-<h2>Hello!</h2>
+<h2>Hello, Ruby Tuesday!</h2>
 
 <% if current_user %>
   <table>
     <tbody>
+      <tr>
+        <td><h2>------ User ------</h2></td>
+      </tr>
+
       <tr>
         <td>ID : </td>
         <td><%= current_user.id %></td>
@@ -14,21 +18,16 @@
       </tr>
 
       <tr>
-        <td>Encrypted Password : </td>
-        <td><%= current_user.encrypted_password %></td>
-      </tr>
-
-      <tr>
-        <td>------ Current Company Information ------</td>
+        <td><h2>------ Company ------</h2></td>
       </tr>
 
       <tr>
         <td>Name : </td>
-        <td><%= current_tenant.name %></td>
+        <td><%= current_tenant&.name %></td>
       </tr>
 
       <tr>
-        <td>Users : </td>
+        <td>Query All Users : </td>
         <td><%= User.pluck(:email).to_sentence %></td>
       </tr>
 
